@@ -25,7 +25,6 @@ int main(){
     cout<<"Processing: "<<T<<endl;
     //2
     for(int i = 0; i < T.size() - p.size() + 1; ++i){
-        //cout<<i<<" "<<i+3<<" "<<T.substr(i, 4)<<endl;
         if(T.substr(i, p.size()) == p){
             found = true;
             cout<<i<<" ";
@@ -34,6 +33,7 @@ int main(){
     if(!found)
         cout<<"-1";
     cout<<"\n";
+    
     //3
     int vowels = 0, consonants = 0, digits = 0;
     for(int i = 0; i < T.size(); ++i){
@@ -43,13 +43,15 @@ int main(){
         else if(isalpha(T[i])) consonants++;
     }
     cout<<digits<<" "<<vowels<<" "<<consonants<<endl;
+
     //4
-    cout<<"Tolower: "<<T<<endl;
+    cout<<"Text in Tolower: "<<T<<endl;
+
     vector<string> tokens;
     map<string, int> freq;
     istringstream iss(T);
     string token;
-    while(getline(iss, token, ' ')){
+    while(iss>>token){//getline(iss, token, ' ') // is the same than iss>>token
         tokens.push_back(token);
         if(freq.find(token) == freq.end())
             freq[token] = 1;
@@ -58,6 +60,7 @@ int main(){
     }
     sort(tokens.begin(), tokens.end());
     cout<<"Smallest lexicographically: "<<tokens[0]<<'\n';
+
     //Solution with c
     /*char* cstr = new char[T.size() + 1];
     trcpy(cstr, T.c_str());
@@ -66,11 +69,13 @@ int main(){
         tokens.push_back(std::string(token));
         token = strtok(NULL, " ");
     }
-    delete[] cstr;*/
+    delete[] cstr;
     sort(tokens.begin(), tokens.end());
-    cout<<"Smallest lexicographically: "<<tokens[0].c_str()<<'\n';
+    cout<<"Smallest lexicographically: "<<tokens[0].c_str()<<'\n';*/
+
     //5
-    cout<<"Frecuencia de "<<p<<": "<<freq[p]<<endl;
+    cout<<"Frequency of "<<p<<": "<<freq[p]<<endl;
+
     //6
     string lastLine;
     while(getline(cin, lastLine)){

@@ -51,7 +51,7 @@ int main(){
     map<string, int> freq;
     istringstream iss(T);
     string token;
-    while(iss>>token){//getline(iss, token, ' ') // is the same than iss>>token
+    while(iss>>token){ //getline(iss, token, ' ') // is the same than iss>>token
         tokens.push_back(token);
         if(freq.find(token) == freq.end())
             freq[token] = 1;

@@ -20,6 +20,7 @@ int main(){
                 if(s2[i] == '1') ones2++;
             }
         }
+        printf("%d %d\n", ones, ones2);
         printf("Case %d: ", t);
         if(a > b){
             puts("-1");
@@ -30,3 +31,8 @@ int main(){
     }
     return 0;
 }
+//11??
+//0010
+
+//01??0
+//10101

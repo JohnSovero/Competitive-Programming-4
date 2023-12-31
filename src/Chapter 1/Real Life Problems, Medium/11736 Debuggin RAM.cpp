@@ -8,11 +8,11 @@ template<class T> void So(vector<T> &v) {sort(v.begin(), v.end());}
 
 int bytes[256];
 unsigned int val[256];
-int bits, n, q;
-string s;
 
 int32_t main(){
+    int bits, n, q;
     while(cin>>bits>>n){
+        string s;
         memset(val,0,sizeof(val));
         map<string,int> index;
         rep(i,1,n+1){
